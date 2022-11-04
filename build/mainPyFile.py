@@ -41,11 +41,11 @@ def mapQuest():
         tripDuration = Label(outputBox, text=("Trip Duration: " + (json_data["route"]["formattedTime"])))
         tripDuration.grid(row=11,column=1)
         #Print the Kilometers
-        kilometers = Label(outputBox, text=("Kilometers: " + str("{:.2f}".format(json_data["route"]["distance"] * 1.6))))
+        kilometers = Label(outputBox, text=("Kilometers: " + str("{:.2f}".format(json_data["route"]["distance"]*1.6))))
         kilometers.grid(row=12, column=1)
-        #Print the Fuel Used
-        fuelUsed=Label(outputBox,text=("Fuel Used (Ltr): " + str("{:.3f}".format(json_data["route"]["fuelUsed"]*3.78))))
-        fuelUsed.grid(row=13,column=1)
+        #Print the Fuel Cost
+        fuelCost = Label(outputBox, text=("Estimated Fuel Cost: ₱" + str("{:.2f}".format(((json_data["route"]["distance"])/25)*268))))
+        fuelCost.grid(row=13, column=1)
         #Divider
         equalLine1 = Label(outputBox,text="=============================================")
         equalLine1.grid(row=14,column=1)
@@ -120,11 +120,11 @@ def mapQuestMiles():
         tripDuration = Label(outputBox, text=("Trip Duration: " + (json_data["route"]["formattedTime"])))
         tripDuration.grid(row=11,column=1)
         #Print the Kilometers
-        kilometers = Label(outputBox, text=("Kilometers: " + str("{:.2f}".format(json_data["route"]["distance"] * 1.6 * 0.62137119))))
+        kilometers = Label(outputBox, text=("Miles: " + str("{:.2f}".format(json_data["route"]["distance"] * 1.6 * 0.62137119))))
         kilometers.grid(row=12, column=1)
-        #Print the Fuel Used
-        fuelUsed=Label(outputBox,text=("Fuel Used (Ltr): " + str("{:.3f}".format(json_data["route"]["fuelUsed"]*3.78))))
-        fuelUsed.grid(row=13,column=1)
+        #Print the Fuel Cost
+        fuelCost = Label(outputBox, text=("Estimated Fuel Cost: ₱" + str("{:.2f}".format(((json_data["route"]["distance"])/25)*268))))
+        fuelCost.grid(row=13, column=1)
         #Divider
         equalLine1 = Label(outputBox,text="=============================================")
         equalLine1.grid(row=14,column=1)
